@@ -1,0 +1,14 @@
+.ruby-header {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  .navbar-brand {
+    img {
+      height: 100px;
+    }
+  }
+  a.nav-link {
+    line-height: 90px;
+    font-weight: bold;
+  }
+}
+

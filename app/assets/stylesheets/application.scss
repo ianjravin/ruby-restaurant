@@ -1,0 +1,15 @@
+@import "bootstrap";
+@import "colors";
+@import "navigation";
+@import "food_items";
+
+body {
+  background: $red;
+  .main-content {
+    background: $white;
+    margin-top: 2px;
+    border-radius: 5px;
+    padding: 30px;
+  }
+}
+

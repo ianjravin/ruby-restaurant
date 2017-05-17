@@ -1,0 +1,41 @@
+%h1 Food today
+
+.sections
+  .btn-group{:role => "group"}
+    - FoodItem::SECTIONS.each do |section|
+      %a.btn.btn-danger{ href: "?section=#{section}" }= section
+
+%table.table
+  %thead
+    %tr
+      %th Name
+      %th Description
+      %th Price
+      %th Section
+      %th Image
+      %th
+      %th
+      %th
+      %th
+
+  %tbody
+    - if @food_items.present?
+      - @food_items.each do |food_item|
+        %tr
+          %td= food_item.name
+          %td= food_item.description
+          %td= food_item.price
+          %td= food_item.section
+          %td= image_tag food_item.image
+          %td= link_to 'Show', food_item
+          %td= link_to 'Edit', edit_food_item_path(food_item)
+          %td= link_to 'Destroy', food_item, :method => :delete, :data => { :confirm => 'Are you sure?' }
+          %td
+            %a.btn.btn-warning{ href: new_order_path(params.merge(food_item_id: food_item.id)) } Order
+    - else
+      %tr
+        %td.no-food{colspan: 9}= "There is no food for #{@section} today."
+
+%br
+
+= link_to 'New Food item', new_food_item_path

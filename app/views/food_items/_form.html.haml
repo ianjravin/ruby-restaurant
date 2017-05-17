@@ -1,0 +1,7 @@
+= bootstrap_form_for @food_item do |f|
+  = f.text_field :name
+  = f.text_area :description, as: :text
+  = f.text_field :price, prepend: "VND"
+  = f.select :section, FoodItem::SECTIONS, { class: "selectpicker" } 
+  = f.text_field :image
+  = f.submit

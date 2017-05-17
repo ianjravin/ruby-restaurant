@@ -1,0 +1,5 @@
+= bootstrap_form_for @order do |f|
+  = f.text_field :name
+  = f.text_field :phone
+  = f.text_area :address
+  = f.submit 'Order', class: "btn btn-danger"
